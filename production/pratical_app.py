@@ -15,7 +15,7 @@ def load_model():
         features = joblib.load('model_features.pkl')
         return model, le, features
     except FileNotFoundError:
-        st.error("❌ Fichiers modèle non trouvés. Exécutez d'abord 'train_model.py'")
+        st.error("❌ Fichiers modèle non trouvés. Exécutez d'abord 'predict_model.py'")
         st.stop()
 
 model, le, features = load_model()
@@ -98,4 +98,5 @@ with st.sidebar:
 
 # 8. Instructions d'installation
 if st.sidebar.button("🔄 Recréer le modèle"):
+
     st.sidebar.info("Exécutez 'python train_model.py' dans votre terminal")
