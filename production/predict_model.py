@@ -1,4 +1,3 @@
-# train_model.py
 import pandas as pd
 import joblib
 import numpy as np
@@ -63,4 +62,5 @@ print("   - model_features.pkl (liste des features)")
 print("\n🔮 Exemple de prédiction :")
 sample_data = pd.DataFrame([[0, 14, 2, 9]], columns=features)  # Paris, 14h, Mercredi, Septembre
 sample_pred = model.predict(sample_data)[0]
+
 print(f"   Paris, 14h, Mercredi → AQI prédit : {sample_pred:.1f}")
