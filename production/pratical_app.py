@@ -10,9 +10,9 @@ st.set_page_config(page_title="AirQuest - Prédiction AQI", page_icon="🌍")
 @st.cache_resource
 def load_model():
     try:
-        model = joblib.load('air_quality_model.pkl')
-        le = joblib.load('label_encoder.pkl')
-        features = joblib.load('model_features.pkl')
+        model = joblib.load('production/air_quality_model.pkl')
+        le = joblib.load('production/label_encoder.pkl')
+        features = joblib.load('production/model_features.pkl')
         return model, le, features
     except FileNotFoundError:
         st.error("❌ Fichiers modèle non trouvés. Exécutez d'abord 'predict_model.py'")
@@ -100,3 +100,4 @@ with st.sidebar:
 if st.sidebar.button("🔄 Recréer le modèle"):
 
     st.sidebar.info("Exécutez 'python train_model.py' dans votre terminal")
+
